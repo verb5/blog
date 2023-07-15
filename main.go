@@ -11,13 +11,10 @@ import (
 
 func main() {
 	app := fiber.New()
-	app.Get("/:message", func(c *fiber.Ctx) error {
-		copyVal := utils.CopyString(c.Params("message"))
-		c.Locals("msg","1:"+copyVal )
-		return c.Next()
-	}, func(c *fiber.Ctx) error {
-		result := fmt.Sprintf("2:%s", c.Locals("msg"))
-		return c.SendString(result)
+	app.Get("/", func(c *fiber.Ctx) error {
+		body := fmt.Sprintf(useful.)
+		return c.SendString()
+
 	})
 	app.Listen(":3000")
 }

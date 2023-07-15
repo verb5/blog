@@ -14,7 +14,7 @@ func returnString(s string) string {
 }
 
 
-func getHostname() string {
+func GetHostname() string {
 	hostname, err := os.Hostname()
 	if err != nil {
 		fmt.Println(err)
@@ -22,7 +22,7 @@ func getHostname() string {
 	return hostname
 }
 
-func getIPAddress() string {
+func GetIPAddress() string {
 	addrs, err := net.InterfaceAddrs()
 	if err != nil {
 		fmt.Println(err)
