@@ -13,6 +13,10 @@ func returnString(s string) string {
 	return string(v)
 }
 
+type SystemInfo struct {
+	Hostname string `json:"hostname"`
+	IPAddress string `json:"ip_address"`
+}
 
 func GetHostname() string {
 	hostname, err := os.Hostname()
