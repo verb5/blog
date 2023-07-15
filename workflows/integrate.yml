@@ -2,10 +2,10 @@ name: CI - Integrate
 on:
   push:
     branches:
-      - main
+      - 'main'
 jobs:
   build:
-    runs-on: debian:12
+    runs-on: self-hosted
     steps:
       - run:echo "Integrating..."
       - run:echo "Done!"
