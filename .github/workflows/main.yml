@@ -9,5 +9,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         name:  build test
-        run: echo "Integrating..."
+      - run: echo "Integrating..."
+      - run: echo "time is $(date)"
         shell: bash
