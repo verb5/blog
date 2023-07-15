@@ -1,1 +1,1 @@
-# go blog 
+# go blog 1.0
