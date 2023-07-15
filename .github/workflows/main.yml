@@ -7,6 +7,7 @@ jobs:
   build:
     runs-on: self-hosted
     steps:
-      - run:echo "Integrating..."
-      - run:echo "Done!"
-      - run:echo "Bye!"
+      - uses: actions/checkout@v2
+        name:  build test
+        run: echo "Integrating..."
+        shell: bash
