@@ -9,9 +9,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         name:  build test
-      - run: echo "Integrating..."
-      - run: echo "time is $(date)"
-        shell: |
+      - name: first build test
+        run: |
+          echo "time is $(date)"
           currentTimestamp=$(date +%Y-%m-%d-%H-%M-%S)
           touch "executed-${currentTimestamp}.txt"
   second-build:
