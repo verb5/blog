@@ -16,6 +16,9 @@ func returnString(s string) string {
 type SystemInfo struct {
 	Hostname string `json:"hostname"`
 	IPAddress string `json:"ip_address"`
+	Location string `json:"location"`
+	Year uint `json:"year"`
+	Email string `json:"email"`
 }
 
 func GetHostname() string {

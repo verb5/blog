@@ -12,3 +12,9 @@ jobs:
       - run: echo "Integrating..."
       - run: echo "time is $(date)"
         shell: bash
+  second-build:
+    runs-on: self-hosted
+    steps:
+      - name:  second build test
+        run: echo "time is $(date)"
+        shell: bash
