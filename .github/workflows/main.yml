@@ -3,8 +3,13 @@ on:
   push:
     branches:
       - 'main'
+
 jobs:
   build:
+    container:
+      image: ubuntu:20.04
+      env:
+        TEST_VAR: "test var value"
     runs-on: self-hosted
     steps:
       - uses: actions/checkout@v2
@@ -12,11 +17,14 @@ jobs:
       - name: first build test
         run: |
           echo "time is $(date)"
+          echo "test var is ${TEST_VAR}"
           currentTimestamp=$(date +%Y-%m-%d-%H-%M-%S)
           touch "executed-${currentTimestamp}.txt"
   second-build:
     runs-on: self-hosted
     steps:
       - name:  second build test
-        run: echo "time is $(date)"
+        run: |
+          echo "time is $(date)"
+          echo "test var - 2 is ${TEST_VAR}"
         shell: bash
