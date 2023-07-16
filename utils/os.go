@@ -1,24 +1,24 @@
 package utils
 
-
 import (
-	"net"
 	"fmt"
+	"net"
 	"os"
 )
+
 func returnString(s string) string {
-	m:=[]byte(s)
-	v := make([]byte,len(m))
-	copy(v,m)
+	m := []byte(s)
+	v := make([]byte, len(m))
+	copy(v, m)
 	return string(v)
 }
 
 type SystemInfo struct {
-	Hostname string `json:"hostname"`
+	Hostname  string `json:"hostname"`
 	IPAddress string `json:"ip_address"`
-	Location string `json:"location"`
-	Year uint `json:"year"`
-	Email string `json:"email"`
+	Location  string `json:"location"`
+	Year      uint   `json:"year"`
+	Email     string `json:"email"`
 }
 
 func GetHostname() string {
