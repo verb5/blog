@@ -9,11 +9,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         name:  build test
-      - name: step1
-        run: echo "Integrating..."
-      - name: step2
-        run: echo "time is $(date)"
-        shell: bash
+      - run: echo "Integrating..."
+      - run: echo "time is $(date)"
+        shell: |
+          currentTimestamp=$(date +%Y-%m-%d-%H-%M-%S)
+          touch "executed-${currentTimestamp}.txt"
   second-build:
     runs-on: self-hosted
     steps:
