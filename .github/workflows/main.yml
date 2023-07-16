@@ -1,4 +1,4 @@
-name: CI - Integrate
+name: main workflow
 on:
   push:
     branches:
@@ -9,8 +9,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         name:  build test
-      - run: echo "Integrating..."
-      - run: echo "time is $(date)"
+      - name: step1
+        run: echo "Integrating..."
+      - name: step2
+        run: echo "time is $(date)"
         shell: bash
   second-build:
     runs-on: self-hosted
